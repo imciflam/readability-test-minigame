@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     display: "none"
   }
 }));
-export default function Welc(props) {
+const WelcomeTemplate = props => {
   const classes = useStyles();
   const handleClick = () => {
     console.log(props);
@@ -41,4 +41,6 @@ export default function Welc(props) {
       </Button>
     </React.Fragment>
   );
-}
+};
+
+export default WelcomeTemplate;

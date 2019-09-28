@@ -22,7 +22,7 @@ const renderComponent = (displayedScreen, setScreen) => {
   }
 };
 
-export default function WelcomeScreen() {
+export default function Driver() {
   const [displayedScreen, setScreen] = useState(`WelcomeScreen`);
   console.log(displayedScreen);
   return (
