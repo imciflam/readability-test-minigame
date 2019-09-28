@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
 export default function Welc(props) {
   const classes = useStyles();
   const handleClick = () => {
-    alert(`You clicked`);
     console.log(props);
     props.setScreen(`ContrastTemplate`);
     //setScreen(`ContrastTemplate`);

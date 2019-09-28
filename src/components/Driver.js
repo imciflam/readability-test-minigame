@@ -1,14 +1,24 @@
 import React, { useState } from "react";
-import Welc from "./Welc";
+import WelcomeTemplate from "./WelcomeTemplate";
 import ContrastTemplate from "./ContrastTemplate";
 
 const renderComponent = (displayedScreen, setScreen) => {
   console.log(displayedScreen);
   switch (displayedScreen) {
     case "WelcomeScreen":
-      return <Welc displayedScreen={displayedScreen} setScreen={setScreen} />;
+      return (
+        <WelcomeTemplate
+          displayedScreen={displayedScreen}
+          setScreen={setScreen}
+        />
+      );
     case "ContrastTemplate":
-      return <ContrastTemplate displayedScreen={displayedScreen} />;
+      return (
+        <ContrastTemplate
+          displayedScreen={displayedScreen}
+          setScreen={setScreen}
+        />
+      );
   }
 };
 

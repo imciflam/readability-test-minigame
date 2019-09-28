@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import WelcomeScreen from "./components/WelcomeScreen";
+import Driver from "./components/Driver";
 
 function App() {
   return (
     <div className="App">
-      <WelcomeScreen />
+      <Driver />
     </div>
   );
 }
