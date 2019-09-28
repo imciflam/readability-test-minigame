@@ -20,3 +20,8 @@
 .App-link {
   color: #09d3ac;
 }
+
+p {
+  font-family: "Lucida Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto";
+}
