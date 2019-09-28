@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WelcomeTemplate from "./WelcomeTemplate";
 import ContrastTemplate from "./ContrastTemplate";
+import ThankYou from "./ThankYou";
 
 const renderComponent = (displayedScreen, setScreen) => {
   console.log(displayedScreen);
@@ -19,6 +20,10 @@ const renderComponent = (displayedScreen, setScreen) => {
           setScreen={setScreen}
         />
       );
+    case "WavingGoodbye":
+      return (
+        <ThankYou displayedScreen={displayedScreen} setScreen={setScreen} />
+      );
   }
 };
 
@@ -26,8 +31,15 @@ export default function Driver() {
   const [displayedScreen, setScreen] = useState(`WelcomeScreen`);
   console.log(displayedScreen);
   return (
-    <React.Fragment>
+    <div
+      style={{
+        position: `absolute`,
+        top: `30%`,
+        left: `10%`,
+        width: `80%`
+      }}
+    >
       {renderComponent(displayedScreen, setScreen)}
-    </React.Fragment>
+    </div>
   );
 }
