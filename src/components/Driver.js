@@ -27,15 +27,15 @@ const renderComponent = (
       );
     case "WavingGoodbye":
       return (
-        <ThankYou displayedScreen={displayedScreen} setScreen={setScreen} />
-      );
-    default:
-      return (
         <ThankYou
           displayedScreen={displayedScreen}
           setScreen={setScreen}
           resultArray={resultArray}
         />
+      );
+    default:
+      return (
+        <ThankYou displayedScreen={displayedScreen} setScreen={setScreen} />
       );
   }
 };
