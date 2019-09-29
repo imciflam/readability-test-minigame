@@ -108,26 +108,26 @@ const useEvent = (event, handler, passive = false) => {
   });
 };
 
-const handleOnKeyDown = () => {
-  // if (event.code == "ArrowLeft" || event.code == "ArrowRight ") {
-  //   alert("works!");
-  // }
-};
+let timeSaver = [];
+const startMs = new Date().getTime();
+timeSaver.push(startMs);
+
 const ContrastTemplate = props => {
   const classes = useStyles();
   const [counter, setCounter] = useState(0);
-  console.log(props);
   useEvent("keydown", event => {
     if (event.keyCode === 37 || event.keyCode === 39) {
+      const currentMs = new Date().getTime();
+      timeSaver.push(currentMs);
+      props.setResultArray(timeSaver);
       if (counter < 9) {
-        setCounter(counter + 1);
-      } // function to change counter
-      else {
+        setCounter(counter + 1); // function to change counter
+      } else {
+        props.setResultArray(timeSaver);
         props.setScreen(`WavingGoodbye`);
       }
     }
   });
-  console.log(counter);
   return (
     <div>
       <Paper className={classes.root}>

@@ -1,6 +1,7 @@
 import React from "react";
 
-const ThankYou = () => {
+const ThankYou = props => {
+  console.log(props.resultArray);
   return (
     <div>
       <p>Thanks for participating! We appreciate your efforts!</p>

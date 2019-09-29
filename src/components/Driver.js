@@ -3,8 +3,12 @@ import WelcomeTemplate from "./WelcomeTemplate";
 import ContrastTemplate from "./ContrastTemplate";
 import ThankYou from "./ThankYou";
 
-const renderComponent = (displayedScreen, setScreen) => {
-  console.log(displayedScreen);
+const renderComponent = (
+  displayedScreen,
+  setScreen,
+  setResultArray,
+  resultArray
+) => {
   switch (displayedScreen) {
     case "WelcomeScreen":
       return (
@@ -18,6 +22,7 @@ const renderComponent = (displayedScreen, setScreen) => {
         <ContrastTemplate
           displayedScreen={displayedScreen}
           setScreen={setScreen}
+          setResultArray={setResultArray}
         />
       );
     case "WavingGoodbye":
@@ -26,13 +31,18 @@ const renderComponent = (displayedScreen, setScreen) => {
       );
     default:
       return (
-        <ThankYou displayedScreen={displayedScreen} setScreen={setScreen} />
+        <ThankYou
+          displayedScreen={displayedScreen}
+          setScreen={setScreen}
+          resultArray={resultArray}
+        />
       );
   }
 };
 
 export default function Driver() {
   const [displayedScreen, setScreen] = useState(`WelcomeScreen`);
+  const [resultArray, setResultArray] = useState([]);
   return (
     <div
       style={{
@@ -42,7 +52,7 @@ export default function Driver() {
         width: `80%`
       }}
     >
-      {renderComponent(displayedScreen, setScreen)}
+      {renderComponent(displayedScreen, setScreen, setResultArray, resultArray)}
     </div>
   );
 }
