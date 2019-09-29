@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/readability-test-minigame/static/css/main.5af3311c.chunk.css",
+    "main.js": "/readability-test-minigame/static/js/main.8b3fee3a.chunk.js",
+    "main.js.map": "/readability-test-minigame/static/js/main.8b3fee3a.chunk.js.map",
+    "runtime-main.js": "/readability-test-minigame/static/js/runtime-main.429d808a.js",
+    "runtime-main.js.map": "/readability-test-minigame/static/js/runtime-main.429d808a.js.map",
+    "static/js/2.181caa6d.chunk.js": "/readability-test-minigame/static/js/2.181caa6d.chunk.js",
+    "static/js/2.181caa6d.chunk.js.map": "/readability-test-minigame/static/js/2.181caa6d.chunk.js.map",
+    "index.html": "/readability-test-minigame/index.html",
+    "precache-manifest.80bc6b1af0ec3a4f30a0254b6f2810aa.js": "/readability-test-minigame/precache-manifest.80bc6b1af0ec3a4f30a0254b6f2810aa.js",
+    "service-worker.js": "/readability-test-minigame/service-worker.js",
+    "static/css/main.5af3311c.chunk.css.map": "/readability-test-minigame/static/css/main.5af3311c.chunk.css.map"
+  }
+}
