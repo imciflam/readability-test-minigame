@@ -109,12 +109,16 @@ const useEvent = (event, handler, passive = false) => {
 };
 
 let timeSaver = [];
-const startMs = new Date().getTime();
-timeSaver.push(startMs);
 
 const ContrastTemplate = props => {
   const classes = useStyles();
   const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const startMs = new Date().getTime();
+    timeSaver.push(startMs);
+  }, []); // fired on a first load, so it's basically componentDidMount
+
   useEvent("keydown", event => {
     if (event.keyCode === 37 || event.keyCode === 39) {
       const currentMs = new Date().getTime();
@@ -128,8 +132,9 @@ const ContrastTemplate = props => {
       }
     }
   });
+
   return (
-    <div>
+    <div class="contrastContainer">
       <Paper className={classes.root}>
         <Typography variant="h5" component="h3">
           What does this expression mean?

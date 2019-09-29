@@ -40,7 +40,7 @@ const renderComponent = (
   }
 };
 
-export default function Driver() {
+const Driver = () => {
   const [displayedScreen, setScreen] = useState(`WelcomeScreen`);
   const [resultArray, setResultArray] = useState([]);
   return (
@@ -55,4 +55,5 @@ export default function Driver() {
       {renderComponent(displayedScreen, setScreen, setResultArray, resultArray)}
     </div>
   );
-}
+};
+export default Driver;

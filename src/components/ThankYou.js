@@ -6,16 +6,15 @@ const ThankYou = props => {
     finalResults.push(props.resultArray[i + 1] - props.resultArray[i]);
   }
   console.log(finalResults);
-  return finalResults.map(element => (
-    <ul>
-      <li>
-        <p>
-          Время ответа на вопрос {finalResults.indexOf(element) + 1}: {element}{" "}
-          мс
-        </p>
-      </li>
-    </ul>
+
+  const listData = finalResults.map(element => (
+    <li key={finalResults.indexOf(element) + 1}>
+      <p>
+        Время ответа на вопрос {finalResults.indexOf(element) + 1}: {element} мс
+      </p>
+    </li>
   ));
+  return <ul>{listData}</ul>;
 };
 
 export default ThankYou;
