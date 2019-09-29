@@ -85,12 +85,6 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(2, 2),
     card: {
       minWidth: 300
-    },
-    title: {
-      fontSize: 14
-    },
-    pos: {
-      marginBottom: 12
     }
   }
 }));
@@ -132,15 +126,21 @@ const ContrastTemplate = props => {
       }
     }
   });
-
   return (
-    <div class="contrastContainer">
+    <div className="contrastContainer">
       <Paper className={classes.root}>
         <Typography variant="h5" component="h3">
           What does this expression mean?
         </Typography>
         <br />
-        <Typography component="p">{gameDataLevels[counter].task}</Typography>
+        <Typography
+          style={{
+            color: gameDataLevels[counter].color === `dark` ? `yellow` : `black`
+          }}
+          component="p"
+        >
+          {gameDataLevels[counter].task}
+        </Typography>
       </Paper>
       <div className="container">
         <Card className={classes.card}>
