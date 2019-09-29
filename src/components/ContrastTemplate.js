@@ -95,9 +95,33 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// custom hook
+const useEvent = (event, handler, passive = false) => {
+  useEffect(() => {
+    // initiate the event handler
+    window.addEventListener(event, handler, passive);
+    console.log(event);
+    // this will clean up the event every time the component is re-rendered
+    return function cleanup() {
+      console.log("clean");
+      window.removeEventListener(event, handler);
+    };
+  });
+};
+
+const handleOnKeyDown = () => {
+  // if (event.code == "ArrowLeft" || event.code == "ArrowRight ") {
+  //   alert("works!");
+  // }
+};
 const ContrastTemplate = props => {
   const classes = useStyles();
   const [counter, setCounter] = useState(0);
+  useEvent("keydown", event => {
+    if (event.keyCode === 37 || event.keyCode === 39) {
+      alert("e");
+    }
+  });
 
   return (
     <div>

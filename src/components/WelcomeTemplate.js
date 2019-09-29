@@ -15,8 +15,6 @@ const WelcomeTemplate = props => {
   const handleClick = () => {
     console.log(props);
     props.setScreen(`ContrastTemplate`);
-    //setScreen(`ContrastTemplate`);
-    // here would be WelcomeScreen, ContrastTemplate - after
   };
   return (
     <React.Fragment>
