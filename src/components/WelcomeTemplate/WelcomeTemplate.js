@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
 const WelcomeTemplate = props => {
   const classes = useStyles();
   const handleClick = () => {
-    props.setScreen(`ContrastTemplate`); // function to change screen
+    props.setScreen(`GameTemplate`); // function to change screen
   };
   return (
     <React.Fragment>

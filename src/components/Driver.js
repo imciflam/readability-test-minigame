@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import WelcomeTemplate from "./WelcomeTemplate";
-import ContrastTemplate from "./ContrastTemplate";
-import ThankYou from "./ThankYou";
+import WelcomeTemplate from "./WelcomeTemplate/WelcomeTemplate";
+import GameTemplate from "./GameTemplate/GameTemplate";
+import ThankYou from "./ThankYou/ThankYou";
 
 const renderComponent = (
   displayedScreen,
@@ -17,9 +17,9 @@ const renderComponent = (
           setScreen={setScreen}
         />
       );
-    case "ContrastTemplate":
+    case "GameTemplate":
       return (
-        <ContrastTemplate
+        <GameTemplate
           displayedScreen={displayedScreen}
           setScreen={setScreen}
           setResultArray={setResultArray}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./ThankYou.css";
 
 const ThankYou = props => {
   let finalResults = [];
@@ -14,7 +15,12 @@ const ThankYou = props => {
       </p>
     </li>
   ));
-  return <ul>{listData}</ul>;
+  return (
+    <div>
+      <p>Results</p>
+      <ul className="mainList">{listData}</ul>
+    </div>
+  );
 };
 
 export default ThankYou;
