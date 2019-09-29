@@ -1,10 +1,83 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import "./ContrastTemplate.css";
+
+const gameDataLevels = [
+  {
+    task: `💛💛💛`,
+    leftAnswer: `4`,
+    rightAnswer: `3`,
+    color: `light`,
+    type: `pictogram`
+  },
+  {
+    task: `четыре`,
+    leftAnswer: `4`,
+    rightAnswer: `6`,
+    color: `dark`,
+    type: `letters`
+  },
+  {
+    task: `🖤🖤🖤🖤🖤🖤🖤`,
+    leftAnswer: `8`,
+    rightAnswer: `7`,
+    color: `dark`,
+    type: `pictogram`
+  },
+  {
+    task: `один`,
+    leftAnswer: `1`,
+    rightAnswer: `2`,
+    color: `light`,
+    type: `letters`
+  },
+  {
+    task: `♡♡♡♡♡`,
+    leftAnswer: `4`,
+    rightAnswer: `5`,
+    color: `light`,
+    type: `pictogram`
+  },
+  {
+    task: `восемь`,
+    leftAnswer: `9`,
+    rightAnswer: `8`,
+    color: `dark`,
+    type: `letters`
+  },
+  {
+    task: `🖤🖤🖤🖤🖤🖤🖤🖤🖤`,
+    leftAnswer: `8`,
+    rightAnswer: `9`,
+    color: `dark`,
+    type: `pictogram`
+  },
+  {
+    task: `пять`,
+    leftAnswer: `6`,
+    rightAnswer: `5`,
+    color: `light`,
+    type: `letters`
+  },
+  {
+    task: `💛💛💛💛💛💛`,
+    leftAnswer: `5`,
+    rightAnswer: `6`,
+    color: `light`,
+    type: `pictogram`
+  },
+  {
+    task: `два`,
+    leftAnswer: `2`,
+    rightAnswer: `1`,
+    color: `dark`,
+    type: `letters`
+  }
+];
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,8 +95,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ContrastTemplate(props) {
+const ContrastTemplate = props => {
   const classes = useStyles();
+  const [counter, setCounter] = useState(0);
+
   return (
     <div>
       <Paper className={classes.root}>
@@ -31,34 +106,27 @@ export default function ContrastTemplate(props) {
           What does this expression mean?
         </Typography>
         <br />
-        <Typography component="p">
-          Paper can be used to build surface or other elements for your
-          application.
-        </Typography>
+        <Typography component="p">{gameDataLevels[counter].task}</Typography>
       </Paper>
       <div className="container">
         <Card className={classes.card}>
           <CardContent>
-            <Typography variant="h5" component="h2">
-              beeeee
-            </Typography>
-            <Typography variant="body2" component="p">
-              well meaning and kindly.
+            <Typography variant="h3" component="h2">
+              {gameDataLevels[counter].leftAnswer}
             </Typography>
           </CardContent>
         </Card>
 
         <Card className={classes.card}>
           <CardContent>
-            <Typography variant="h5" component="h2">
-              beeeee
-            </Typography>
-            <Typography variant="body2" component="p">
-              well meaning and kindly.
+            <Typography variant="h3" component="h2">
+              {gameDataLevels[counter].rightAnswer}
             </Typography>
           </CardContent>
         </Card>
       </div>
     </div>
   );
-}
+};
+
+export default ContrastTemplate;
