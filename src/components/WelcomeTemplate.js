@@ -14,7 +14,7 @@ const WelcomeTemplate = props => {
   const classes = useStyles();
   const handleClick = () => {
     console.log(props);
-    props.setScreen(`ContrastTemplate`);
+    props.setScreen(`ContrastTemplate`); // function to change screen
   };
   return (
     <React.Fragment>

@@ -100,10 +100,9 @@ const useEvent = (event, handler, passive = false) => {
   useEffect(() => {
     // initiate the event handler
     window.addEventListener(event, handler, passive);
-    console.log(event);
     // this will clean up the event every time the component is re-rendered
+    // componentDidUpdate, basically
     return function cleanup() {
-      console.log("clean");
       window.removeEventListener(event, handler);
     };
   });
@@ -117,12 +116,18 @@ const handleOnKeyDown = () => {
 const ContrastTemplate = props => {
   const classes = useStyles();
   const [counter, setCounter] = useState(0);
+  console.log(props);
   useEvent("keydown", event => {
     if (event.keyCode === 37 || event.keyCode === 39) {
-      alert("e");
+      if (counter < 9) {
+        setCounter(counter + 1);
+      } // function to change counter
+      else {
+        props.setScreen(`WavingGoodbye`);
+      }
     }
   });
-
+  console.log(counter);
   return (
     <div>
       <Paper className={classes.root}>
