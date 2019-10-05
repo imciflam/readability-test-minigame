@@ -106,8 +106,6 @@ const useEvent = (event, handler, passive = false) => {
 let timeSaver = [];
 const screenSwitcher = (props, counter, setCounter) => {
   const currentMs = new Date().getTime();
-  console.log(timeSaver);
-  console.log(props);
   timeSaver.push(currentMs);
   props.setResultArray(timeSaver);
   if (counter < 9) {
@@ -129,7 +127,6 @@ const GameTemplate = props => {
 
   useEvent("keydown", event => {
     if (event.keyCode === 37 || event.keyCode === 39) {
-      console.log(props);
       screenSwitcher(props, counter, setCounter);
     }
   });
