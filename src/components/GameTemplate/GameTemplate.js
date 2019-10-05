@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import CardActionArea from "@material-ui/core/CardActionArea";
 import "./GameTemplate.css";
 
 const gameDataLevels = [
@@ -103,6 +104,19 @@ const useEvent = (event, handler, passive = false) => {
 };
 
 let timeSaver = [];
+const screenSwitcher = (props, counter, setCounter) => {
+  const currentMs = new Date().getTime();
+  console.log(timeSaver);
+  console.log(props);
+  timeSaver.push(currentMs);
+  props.setResultArray(timeSaver);
+  if (counter < 9) {
+    setCounter(counter + 1); // function to change counter
+  } else {
+    props.setResultArray(timeSaver);
+    props.setScreen(`WavingGoodbye`);
+  }
+};
 
 const GameTemplate = props => {
   const classes = useStyles();
@@ -115,15 +129,8 @@ const GameTemplate = props => {
 
   useEvent("keydown", event => {
     if (event.keyCode === 37 || event.keyCode === 39) {
-      const currentMs = new Date().getTime();
-      timeSaver.push(currentMs);
-      props.setResultArray(timeSaver);
-      if (counter < 9) {
-        setCounter(counter + 1); // function to change counter
-      } else {
-        props.setResultArray(timeSaver);
-        props.setScreen(`WavingGoodbye`);
-      }
+      console.log(props);
+      screenSwitcher(props, counter, setCounter);
     }
   });
   return (
@@ -144,19 +151,27 @@ const GameTemplate = props => {
       </Paper>
       <div className="container">
         <Card className={classes.card}>
-          <CardContent>
-            <Typography variant="h3" component="h2">
-              {gameDataLevels[counter].leftAnswer}
-            </Typography>
-          </CardContent>
+          <CardActionArea
+            onClick={() => screenSwitcher(props, counter, setCounter)}
+          >
+            <CardContent>
+              <Typography variant="h3" component="h2">
+                {gameDataLevels[counter].leftAnswer}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
         </Card>
 
         <Card className={classes.card}>
-          <CardContent>
-            <Typography variant="h3" component="h2">
-              {gameDataLevels[counter].rightAnswer}
-            </Typography>
-          </CardContent>
+          <CardActionArea
+            onClick={() => screenSwitcher(props, counter, setCounter)}
+          >
+            <CardContent>
+              <Typography variant="h3" component="h2">
+                {gameDataLevels[counter].rightAnswer}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
         </Card>
       </div>
     </div>
