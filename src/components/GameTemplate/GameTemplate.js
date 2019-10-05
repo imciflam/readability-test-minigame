@@ -7,7 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import "./GameTemplate.css";
 
-const gameDataLevels = [
+const gameDataLevels1 = [
   {
     task: `💛💛💛`,
     leftAnswer: `4`,
@@ -80,6 +80,84 @@ const gameDataLevels = [
   }
 ];
 
+const gameDataLevels2 = [
+  {
+    task: `пять`,
+    leftAnswer: `5`,
+    rightAnswer: `6`,
+    color: `dark`,
+    type: `letters`
+  },
+  {
+    task: `💛💛💛💛💛💛`,
+    leftAnswer: `7`,
+    rightAnswer: `6`,
+    color: `light`,
+    type: `pictogram`
+  },
+  {
+    task: `🖤🖤🖤🖤🖤🖤🖤🖤🖤`,
+    leftAnswer: `8`,
+    rightAnswer: `9`,
+    color: `dark`,
+    type: `pictogram`
+  },
+  {
+    task: `два`,
+    leftAnswer: `1`,
+    rightAnswer: `2`,
+    color: `light`,
+    type: `letters`
+  },
+  {
+    task: `♡♡♡♡`,
+    leftAnswer: `4`,
+    rightAnswer: `5`,
+    color: `light`,
+    type: `pictogram`
+  },
+  {
+    task: `восемь`,
+    leftAnswer: `9`,
+    rightAnswer: `8`,
+    color: `dark`,
+    type: `letters`
+  },
+  {
+    task: `🖤🖤`,
+    leftAnswer: `3`,
+    rightAnswer: `2`,
+    color: `dark`,
+    type: `pictogram`
+  },
+
+  {
+    task: `два`,
+    leftAnswer: `2`,
+    rightAnswer: `1`,
+    color: `dark`,
+    type: `letters`
+  },
+  {
+    task: `💛💛💛💛💛💛💛`,
+    leftAnswer: `7`,
+    rightAnswer: `6`,
+    color: `light`,
+    type: `pictogram`
+  },
+  {
+    task: `шесть`,
+    leftAnswer: `6`,
+    rightAnswer: `5`,
+    color: `light`,
+    type: `letters`
+  }
+];
+
+const gameDataLevels = Math.floor(Math.random() * 2)
+  ? gameDataLevels1
+  : gameDataLevels2;
+
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(3, 2),
@@ -119,7 +197,6 @@ const screenSwitcher = (props, counter, setCounter) => {
 const GameTemplate = props => {
   const classes = useStyles();
   const [counter, setCounter] = useState(0);
-
   useEffect(() => {
     const startMs = new Date().getTime();
     timeSaver.push(startMs);
