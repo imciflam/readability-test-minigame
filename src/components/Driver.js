@@ -7,7 +7,9 @@ const renderComponent = (
   displayedScreen,
   setScreen,
   setResultArray,
-  resultArray
+  resultArray,
+  setResultString,
+  resultString
 ) => {
   switch (displayedScreen) {
     case "WelcomeScreen":
@@ -23,6 +25,7 @@ const renderComponent = (
           displayedScreen={displayedScreen}
           setScreen={setScreen}
           setResultArray={setResultArray}
+          setResultString={setResultString}
         />
       );
     case "WavingGoodbye":
@@ -31,6 +34,7 @@ const renderComponent = (
           displayedScreen={displayedScreen}
           setScreen={setScreen}
           resultArray={resultArray}
+          resultString={resultString}
         />
       );
     default:
@@ -43,6 +47,7 @@ const renderComponent = (
 const Driver = () => {
   const [displayedScreen, setScreen] = useState(`WelcomeScreen`);
   const [resultArray, setResultArray] = useState([]);
+  const [resultString, setResultString] = useState([]);
   return (
     <div
       style={{
@@ -52,7 +57,14 @@ const Driver = () => {
         width: `80%`
       }}
     >
-      {renderComponent(displayedScreen, setScreen, setResultArray, resultArray)}
+      {renderComponent(
+        displayedScreen,
+        setScreen,
+        setResultArray,
+        resultArray,
+        resultString,
+        setResultString
+      )}
     </div>
   );
 };

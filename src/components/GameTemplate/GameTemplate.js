@@ -13,7 +13,8 @@ const gameDataLevels1 = [
     leftAnswer: `4`,
     rightAnswer: `3`,
     color: `light`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `1`
   },
   {
     task: `четыре`,
@@ -182,6 +183,7 @@ const useEvent = (event, handler, passive = false) => {
 };
 
 let timeSaver = [];
+let userString = [];
 const screenSwitcher = (props, counter, setCounter) => {
   const currentMs = new Date().getTime();
   timeSaver.push(currentMs);
@@ -204,8 +206,16 @@ const GameTemplate = props => {
 
   useEvent("keydown", event => {
     if (event.keyCode === 37 || event.keyCode === 39) {
+      if (event.keyCode === 37) {
+        userString.push("0");
+        console.log(userString);
+      } else if (event.keyCode === 39) {
+        userString.push("1");
+        console.log(userString);
+      }
       screenSwitcher(props, counter, setCounter);
     }
+    console.log(userString);
   });
   return (
     <div className="contrastContainer">
