@@ -2,6 +2,7 @@ import React from "react";
 import "./ThankYou.css";
 
 const ThankYou = props => {
+  console.log(props);
   let finalResults = [];
   for (let i = 0; i < props.resultArray.length - 1; i++) {
     finalResults.push(props.resultArray[i + 1] - props.resultArray[i]);
@@ -16,7 +17,7 @@ const ThankYou = props => {
   ));
   return (
     <div>
-      <p>Results</p>
+      <p>Results: {props.resultString}</p>
       <ul className="mainList">{listData}</ul>
     </div>
   );

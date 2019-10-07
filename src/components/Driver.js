@@ -62,8 +62,8 @@ const Driver = () => {
         setScreen,
         setResultArray,
         resultArray,
-        resultString,
-        setResultString
+        setResultString,
+        resultString
       )}
     </div>
   );

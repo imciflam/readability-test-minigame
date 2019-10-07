@@ -21,63 +21,72 @@ const gameDataLevels1 = [
     leftAnswer: `4`,
     rightAnswer: `6`,
     color: `dark`,
-    type: `letters`
+    type: `letters`,
+    correct: `0`
   },
   {
     task: `🖤🖤🖤🖤🖤🖤🖤`,
     leftAnswer: `8`,
     rightAnswer: `7`,
     color: `dark`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `1`
   },
   {
     task: `один`,
     leftAnswer: `1`,
     rightAnswer: `2`,
     color: `light`,
-    type: `letters`
+    type: `letters`,
+    correct: `0`
   },
   {
     task: `♡♡♡♡♡`,
     leftAnswer: `4`,
     rightAnswer: `5`,
     color: `light`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `1`
   },
   {
     task: `восемь`,
     leftAnswer: `9`,
     rightAnswer: `8`,
     color: `dark`,
-    type: `letters`
+    type: `letters`,
+    correct: `1`
   },
   {
     task: `🖤🖤🖤🖤🖤🖤🖤🖤🖤`,
     leftAnswer: `8`,
     rightAnswer: `9`,
     color: `dark`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `1`
   },
   {
     task: `пять`,
     leftAnswer: `6`,
     rightAnswer: `5`,
     color: `light`,
-    type: `letters`
+    type: `letters`,
+    correct: `1`
   },
   {
     task: `💛💛💛💛💛💛`,
     leftAnswer: `5`,
     rightAnswer: `6`,
     color: `light`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `1`
   },
   {
     task: `два`,
     leftAnswer: `2`,
     rightAnswer: `1`,
     color: `dark`,
-    type: `letters`
+    type: `letters`,
+    correct: `0`
   }
 ];
 
@@ -87,49 +96,56 @@ const gameDataLevels2 = [
     leftAnswer: `5`,
     rightAnswer: `6`,
     color: `dark`,
-    type: `letters`
+    type: `letters`,
+    correct: `0`
   },
   {
     task: `💛💛💛💛💛💛`,
     leftAnswer: `7`,
     rightAnswer: `6`,
     color: `light`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `1`
   },
   {
     task: `🖤🖤🖤🖤🖤🖤🖤🖤🖤`,
     leftAnswer: `8`,
     rightAnswer: `9`,
     color: `dark`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `1`
   },
   {
     task: `два`,
     leftAnswer: `1`,
     rightAnswer: `2`,
     color: `light`,
-    type: `letters`
+    type: `letters`,
+    correct: `1`
   },
   {
     task: `♡♡♡♡`,
     leftAnswer: `4`,
     rightAnswer: `5`,
     color: `light`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `0`
   },
   {
     task: `восемь`,
     leftAnswer: `9`,
     rightAnswer: `8`,
     color: `dark`,
-    type: `letters`
+    type: `letters`,
+    correct: `1`
   },
   {
     task: `🖤🖤`,
     leftAnswer: `3`,
     rightAnswer: `2`,
     color: `dark`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `1`
   },
 
   {
@@ -137,27 +153,38 @@ const gameDataLevels2 = [
     leftAnswer: `2`,
     rightAnswer: `1`,
     color: `dark`,
-    type: `letters`
+    type: `letters`,
+    correct: `0`
   },
   {
     task: `💛💛💛💛💛💛💛`,
     leftAnswer: `7`,
     rightAnswer: `6`,
     color: `light`,
-    type: `pictogram`
+    type: `pictogram`,
+    correct: `0`
   },
   {
     task: `шесть`,
     leftAnswer: `6`,
     rightAnswer: `5`,
     color: `light`,
-    type: `letters`
+    type: `letters`,
+    correct: `0`
   }
 ];
 
 const gameDataLevels = Math.floor(Math.random() * 2)
   ? gameDataLevels1
   : gameDataLevels2;
+
+const answerGetter = () => {
+  let answerLine = "";
+  for (var i = 0; i < gameDataLevels.length; i++) {
+    answerLine = answerLine.concat(gameDataLevels[i].correct);
+  }
+  return answerLine;
+};
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -192,6 +219,14 @@ const screenSwitcher = (props, counter, setCounter) => {
     setCounter(counter + 1); // function to change counter
   } else {
     props.setResultArray(timeSaver);
+    const answerLine = answerGetter();
+    console.log(answerLine);
+    console.log(userString.join(""));
+    if (userString.join("") !== answerLine) {
+      props.setResultString("mistakes were made");
+    } else {
+      props.setResultString("mistakes were not made");
+    }
     props.setScreen(`WavingGoodbye`);
   }
 };
@@ -208,14 +243,11 @@ const GameTemplate = props => {
     if (event.keyCode === 37 || event.keyCode === 39) {
       if (event.keyCode === 37) {
         userString.push("0");
-        console.log(userString);
       } else if (event.keyCode === 39) {
         userString.push("1");
-        console.log(userString);
       }
       screenSwitcher(props, counter, setCounter);
     }
-    console.log(userString);
   });
   return (
     <div className="contrastContainer">
@@ -235,9 +267,7 @@ const GameTemplate = props => {
       </Paper>
       <div className="container">
         <Card className={classes.card}>
-          <CardActionArea
-            onClick={() => screenSwitcher(props, counter, setCounter)}
-          >
+          <CardActionArea onClick={() => alert("use the arrow key, luke")}>
             <CardContent>
               <Typography variant="h3" component="h2">
                 {gameDataLevels[counter].leftAnswer}
@@ -247,9 +277,7 @@ const GameTemplate = props => {
         </Card>
 
         <Card className={classes.card}>
-          <CardActionArea
-            onClick={() => screenSwitcher(props, counter, setCounter)}
-          >
+          <CardActionArea onClick={() => alert("use the arrow key, luke")}>
             <CardContent>
               <Typography variant="h3" component="h2">
                 {gameDataLevels[counter].rightAnswer}
