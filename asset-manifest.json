@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/readability-test-minigame/static/css/main.96c7da5f.chunk.css",
-    "main.js": "/readability-test-minigame/static/js/main.eaeb05f4.chunk.js",
-    "main.js.map": "/readability-test-minigame/static/js/main.eaeb05f4.chunk.js.map",
-    "runtime-main.js": "/readability-test-minigame/static/js/runtime-main.429d808a.js",
-    "runtime-main.js.map": "/readability-test-minigame/static/js/runtime-main.429d808a.js.map",
-    "static/js/2.7453cb4b.chunk.js": "/readability-test-minigame/static/js/2.7453cb4b.chunk.js",
-    "static/js/2.7453cb4b.chunk.js.map": "/readability-test-minigame/static/js/2.7453cb4b.chunk.js.map",
+    "main.js": "/readability-test-minigame/static/js/main.30c08952.chunk.js",
+    "main.js.map": "/readability-test-minigame/static/js/main.30c08952.chunk.js.map",
+    "runtime-main.js": "/readability-test-minigame/static/js/runtime-main.1a4e73f9.js",
+    "runtime-main.js.map": "/readability-test-minigame/static/js/runtime-main.1a4e73f9.js.map",
+    "static/js/2.e066e0e0.chunk.js": "/readability-test-minigame/static/js/2.e066e0e0.chunk.js",
+    "static/js/2.e066e0e0.chunk.js.map": "/readability-test-minigame/static/js/2.e066e0e0.chunk.js.map",
     "index.html": "/readability-test-minigame/index.html",
-    "precache-manifest.c7a546a43a31de3024cdabef29c17af5.js": "/readability-test-minigame/precache-manifest.c7a546a43a31de3024cdabef29c17af5.js",
+    "precache-manifest.806271b86bff6bfc728c592d22ff9b4d.js": "/readability-test-minigame/precache-manifest.806271b86bff6bfc728c592d22ff9b4d.js",
     "service-worker.js": "/readability-test-minigame/service-worker.js",
     "static/css/main.96c7da5f.chunk.css.map": "/readability-test-minigame/static/css/main.96c7da5f.chunk.css.map"
   }
