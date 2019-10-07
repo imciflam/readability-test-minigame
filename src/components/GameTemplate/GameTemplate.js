@@ -208,7 +208,13 @@ const useEvent = (event, handler, passive = false) => {
     };
   });
 };
-
+const mistakeFinder = (str1, str2) => {
+  let mistakeCounter = 0;
+  for (let i = 0; i < str1.length; i++) {
+    if (str1[i] !== str2[i]) mistakeCounter++;
+  }
+  return mistakeCounter;
+};
 let timeSaver = [];
 let userString = [];
 const screenSwitcher = (props, counter, setCounter) => {
@@ -220,12 +226,12 @@ const screenSwitcher = (props, counter, setCounter) => {
   } else {
     props.setResultArray(timeSaver);
     const answerLine = answerGetter();
-    console.log(answerLine);
-    console.log(userString.join(""));
     if (userString.join("") !== answerLine) {
-      props.setResultString("mistakes were made");
+      props.setResultString(
+        `${mistakeFinder(userString.join(""), answerLine)} mistakes were made`
+      );
     } else {
-      props.setResultString("mistakes were not made");
+      props.setResultString(`mistakes were not made`);
     }
     props.setScreen(`WavingGoodbye`);
   }
