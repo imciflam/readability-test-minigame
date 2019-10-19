@@ -16,7 +16,7 @@ const ThankYou = props => {
   ));
   return (
     <div>
-      <p>Results: {props.resultString}</p>
+      <p>Результаты: {props.resultString}</p>
       <ul className="mainList">{listData}</ul>
     </div>
   );
