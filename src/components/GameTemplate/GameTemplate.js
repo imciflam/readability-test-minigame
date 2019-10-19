@@ -228,10 +228,10 @@ const screenSwitcher = (props, counter, setCounter) => {
     const answerLine = answerGetter();
     if (userString.join("") !== answerLine) {
       props.setResultString(
-        `${mistakeFinder(userString.join(""), answerLine)} mistakes were made`
+        `${mistakeFinder(userString.join(""), answerLine)} ошибок`
       );
     } else {
-      props.setResultString(`mistakes were not made`);
+      props.setResultString(`ошибок нет`);
     }
     props.setScreen(`WavingGoodbye`);
   }
