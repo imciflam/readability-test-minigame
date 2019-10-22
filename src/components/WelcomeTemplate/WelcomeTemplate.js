@@ -25,10 +25,7 @@ const WelcomeTemplate = props => {
 
       <p>Your task is to recognise each number and give an answer ASAP.</p>
 
-      <p>
-        You can use your 🠐 🠒 buttons for it or simply click on cards with
-        numbers.
-      </p>
+      <p>You can use your 🠐 🠒 buttons for it.</p>
 
       <p>Are you ready? Then click play!</p>
 
