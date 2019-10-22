@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bfc70c85d807231e169021eb1fdb2e90",
+    "revision": "83a16d17028ea1a287a4ee08f1ae1a7f",
     "url": "/readability-test-minigame/index.html"
   },
   {
-    "revision": "e3c8d98aaa45c15a5009",
+    "revision": "2f893d84f7b743aa0b71",
     "url": "/readability-test-minigame/static/css/main.96c7da5f.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/readability-test-minigame/static/js/2.e066e0e0.chunk.js"
   },
   {
-    "revision": "e3c8d98aaa45c15a5009",
-    "url": "/readability-test-minigame/static/js/main.7bbf9f13.chunk.js"
+    "revision": "2f893d84f7b743aa0b71",
+    "url": "/readability-test-minigame/static/js/main.13674f0e.chunk.js"
   },
   {
     "revision": "6ba519ce2dea579b8006",
